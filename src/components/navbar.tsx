@@ -23,13 +23,13 @@ export default function Navbar() {
   ]
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white shadow-sm">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
               <Image src="/logo.png" alt="KekeliAI Logo" width={70} height={70} />
-              <span className="text-xl font-bold bg-gradient-to-r from-blue-700 to-purple-700 bg-clip-text text-transparent">
+              <span className="text-xl font-bold bg-gradient-to-r from-gray-800 to-black bg-clip-text text-transparent">
                 KekeliAI
               </span>
             </Link>
@@ -42,8 +42,8 @@ export default function Navbar() {
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-blue-700",
-                  pathname === item.href ? "text-blue-700" : "text-gray-600",
+                  "text-sm font-medium transition-colors hover:text-gray-900",
+                  pathname === item.href ? "text-gray-900" : "text-gray-600",
                 )}
               >
                 {item.name}
@@ -52,7 +52,7 @@ export default function Navbar() {
           </nav>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden" onClick={toggleMenu} aria-label="Toggle Menu">
+          <button className="md:hidden text-gray-600" onClick={toggleMenu} aria-label="Toggle Menu">
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
@@ -60,7 +60,7 @@ export default function Navbar() {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden border-t">
+        <div className="md:hidden border-t border-gray-200 bg-white">
           <div className="container mx-auto px-4 py-4 space-y-4">
             <nav className="flex flex-col space-y-4">
               {navItems.map((item) => (
@@ -68,8 +68,8 @@ export default function Navbar() {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    "text-sm font-medium transition-colors hover:text-blue-700 py-2",
-                    pathname === item.href ? "text-blue-700" : "text-gray-600",
+                    "text-sm font-medium transition-colors hover:text-gray-900 py-2",
+                    pathname === item.href ? "text-gray-900" : "text-gray-600",
                   )}
                   onClick={() => setIsMenuOpen(false)}
                 >

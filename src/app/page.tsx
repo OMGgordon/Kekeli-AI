@@ -8,24 +8,24 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center">
       {/* Hero Section */}
-      <section className="w-full bg-gradient-to-br from-blue-900 via-indigo-800 to-purple-800 text-white">
+      <section className="w-full bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
         <div className="container px-4 md:px-6 mx-auto flex flex-col lg:flex-row items-center gap-6 lg:gap-12 py-12 md:py-24 lg:py-32">
           <div className="flex flex-col space-y-4 lg:space-y-6 lg:w-1/2">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter">
               Fine-tune and deploy your own AI models — no code, no complexity.
             </h1>
-            <p className="text-lg md:text-xl text-gray-200 max-w-[600px]">
+            <p className="text-lg md:text-xl text-gray-300 max-w-[600px]">
               KekeliAI is the easiest way to customize and launch large language models (LLMs) using your own data. No
               ML experience required. Secure. Scalable. End-to-end.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-4">
-              <Button size="lg" className="bg-white text-blue-900 hover:bg-white/20 hover:shadow-md transition-all">
+              <Button size="lg" className="bg-white text-gray-900 hover:bg-gray-100 hover:shadow-md transition-all">
                 Get Started Free
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-blue-900 border-2 hover:bg-white/20 hover:shadow-md transition-all"
+                className="border-white text-white border-2 hover:bg-white/10 hover:shadow-md transition-all"
               >
                 Book a Demo
               </Button>
