@@ -19,13 +19,16 @@ export default function Home() {
               ML experience required. Secure. Scalable. End-to-end.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-4">
-              <Button size="lg" className="bg-white text-gray-900 hover:bg-gray-100 hover:shadow-md transition-all">
+              <Button 
+                size="lg" 
+                className="rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-all px-8 font-medium"
+              >
                 Get Started Free
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-white border-2 hover:bg-white/10 hover:shadow-md transition-all"
+                className="rounded-full bg-transparent border-gray-600 text-gray-300 border hover:bg-violet-600/20 hover:border-violet-500 hover:text-violet-400 transition-all px-8 font-medium"
               >
                 Book a Demo
               </Button>
@@ -210,13 +213,16 @@ export default function Home() {
               Get started for free or book a demo to see how KekeliAI can work for your team.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-white text-blue-900 hover:bg-white/20 hover:shadow-md transition-all">
+              <Button 
+                size="lg" 
+                className="rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-all px-8 font-medium"
+              >
                 Get Started Free
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-blue-900 border-2 hover:bg-white/20 hover:shadow-md transition-all"
+                className="rounded-full bg-transparent border-gray-600 text-gray-300 border hover:bg-violet-600/20 hover:border-violet-500 hover:text-violet-400 transition-all px-8 font-medium"
               >
                 Book a Demo
               </Button>
