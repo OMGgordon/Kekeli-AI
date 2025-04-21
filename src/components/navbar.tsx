@@ -6,6 +6,8 @@ import { Menu, X } from "lucide-react"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
+import { Button } from "./ui/button"
+import { DemoForm } from "./demo-form"
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -23,63 +25,69 @@ export default function Navbar() {
   ]
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-sm border-b border-gray-800/50">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex h-16 items-center justify-between">
-          <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-2">
-              <Image src="/logo.png" alt="KekeliAI Logo" width={70} height={70} />
-              <span className="text-xl font-bold bg-gradient-to-r from-gray-800 to-black bg-clip-text text-transparent">
-                KekeliAI
-              </span>
-            </Link>
-          </div>
+          <Link href="/" className="flex items-center space-x-2">
+            <Image src="/logo.png" alt="KekeliAI Logo" width={70} height={70} />
+            <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">
+              KekeliAI
+            </span>
+          </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className={cn(
-                  "text-sm font-medium transition-colors hover:text-gray-900",
-                  pathname === item.href ? "text-gray-900" : "text-gray-600",
-                )}
+                className="text-gray-300 hover:text-white transition-colors relative group"
               >
                 {item.name}
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-violet-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
               </Link>
             ))}
           </nav>
 
+          {/* Desktop CTA Buttons */}
+          <div className="hidden md:flex items-center space-x-4">
+            <DemoForm />
+            <Button asChild className="rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-all px-6 font-medium">
+              <Link href="/get-started">Get Started Free</Link>
+            </Button>
+          </div>
+
           {/* Mobile Menu Button */}
-          <button className="md:hidden text-gray-600" onClick={toggleMenu} aria-label="Toggle Menu">
+          <button
+            className="md:hidden text-gray-300 hover:text-white transition-colors"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
-      </div>
 
-      {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="md:hidden border-t border-gray-200 bg-white">
-          <div className="container mx-auto px-4 py-4 space-y-4">
-            <nav className="flex flex-col space-y-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={cn(
-                    "text-sm font-medium transition-colors hover:text-gray-900 py-2",
-                    pathname === item.href ? "text-gray-900" : "text-gray-600",
-                  )}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </nav>
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="md:hidden py-4 space-y-4">
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="block text-gray-300 hover:text-white transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.name}
+              </Link>
+            ))}
+            <div className="pt-4 space-y-4">
+              <DemoForm />
+              <Button asChild className="w-full rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-all px-6 font-medium">
+                <Link href="/get-started">Get Started Free</Link>
+              </Button>
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </header>
   )
 }
