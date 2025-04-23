@@ -41,10 +41,16 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-300 hover:text-white transition-colors relative group"
+                className={cn(
+                  "text-gray-300 hover:text-white transition-colors relative group",
+                  pathname === item.href && "text-white font-medium"
+                )}
               >
                 {item.name}
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-violet-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                <span className={cn(
+                  "absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-violet-400 transform transition-transform duration-300",
+                  pathname === item.href ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                )}></span>
               </Link>
             ))}
           </nav>
@@ -73,7 +79,10 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="block text-gray-300 hover:text-white transition-colors"
+                className={cn(
+                  "block text-gray-300 hover:text-white transition-colors relative py-2",
+                  pathname === item.href && "text-white font-medium bg-gradient-to-r from-blue-400/10 to-violet-400/10 rounded-lg px-4"
+                )}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
