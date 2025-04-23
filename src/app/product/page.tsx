@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Upload, Zap, Code, Shield, MessageSquare, Key, Activity } from "lucide-react"
 import Image from "next/image"
-import { DemoForm } from "@/components/demo-form"
 import Link from "next/link"
 
 export default function ProductPage() {
@@ -10,33 +9,37 @@ export default function ProductPage() {
     <div className="flex flex-col items-center">
       {/* Hero Section */}
       <section className="w-full bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
-        <div className="container px-4 md:px-6 mx-auto flex flex-col items-center text-center py-12 md:py-24 lg:py-32">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
-            Build AI models that understand your business
-          </h1>
-          <p className="text-lg md:text-xl text-gray-300 max-w-[800px] mb-8">
-            Fine-tune large language models with your data to create AI that speaks your company's language.
-          </p>
-          <div className="flex flex-col gap-2 min-[400px]:flex-row">
-            <DemoForm />
-            <Button asChild className="rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-all px-8 font-medium">
-              <Link href="/get-started">Get Started Free</Link>
-            </Button>
+        <div className="container px-4 md:px-6 mx-auto flex flex-col items-center py-12 md:py-24 lg:py-32">
+          <div className="text-center space-y-4 max-w-[800px]">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
+              Build AI models that understand your business
+            </h1>
+            <p className="text-lg md:text-xl text-gray-300">
+              Train custom AI models on your business data to automate tasks, improve decision making, and drive efficiency.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 mt-8">
+              <Button asChild variant="outline" className="rounded-full bg-transparent border-gray-600 text-gray-300 border hover:bg-violet-600/20 hover:border-violet-500 hover:text-violet-400 transition-all px-6 font-medium">
+                <Link href="/demo">Book a Demo</Link>
+              </Button>
+              <Button asChild className="rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-all px-6 font-medium">
+                <Link href="/get-started">Get Started Free</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Features Breakdown */}
-      <section className="w-full py-12 md:py-24 bg-black">
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-black">
         <div className="container px-4 md:px-6 mx-auto">
-          <div className="flex flex-col items-center text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight text-white mb-4">Features Breakdown</h2>
-            <p className="text-xl text-gray-400 max-w-[800px]">
+          <div className="flex flex-col items-center text-center">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">Features Breakdown</h2>
+            <p className="text-xl text-gray-400 max-w-[800px] mb-16">
               Everything you need to build, deploy, and manage custom AI models
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="border-none bg-gray-900 shadow-lg hover:shadow-xl transition-shadow">
               <CardHeader>
                 <div className="w-12 h-12 rounded-full bg-violet-900/20 flex items-center justify-center mb-4">
@@ -155,14 +158,16 @@ export default function ProductPage() {
       {/* CTA Section */}
       <section className="w-full py-12 md:py-24 bg-black">
         <div className="container px-4 md:px-6 mx-auto">
-          <div className="flex flex-col items-center text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-white mb-4">Ready to get started?</h2>
-            <p className="text-xl text-gray-300 max-w-[800px] mb-8">
+          <div className="flex flex-col items-center text-center space-y-6">
+            <h2 className="text-3xl font-bold tracking-tight text-white">Ready to get started?</h2>
+            <p className="text-xl text-gray-300 max-w-[800px]">
               Join leading companies using KekeliAI to build custom AI solutions.
             </p>
-            <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center mt-4">
-              <DemoForm />
-              <Button asChild className="rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-all px-8 font-medium">
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button asChild variant="outline" className="rounded-full bg-transparent border-gray-600 text-gray-300 border hover:bg-violet-600/20 hover:border-violet-500 hover:text-violet-400 transition-all px-6 font-medium">
+                <Link href="/demo">Book a Demo</Link>
+              </Button>
+              <Button asChild className="rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-all px-6 font-medium">
                 <Link href="/get-started">Get Started Free</Link>
               </Button>
             </div>

@@ -7,7 +7,6 @@ import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "./ui/button"
-import { DemoForm } from "./demo-form"
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -57,7 +56,9 @@ export default function Navbar() {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <DemoForm />
+            <Button asChild variant="outline" className="rounded-full bg-transparent border-gray-600 text-gray-300 border hover:bg-violet-600/20 hover:border-violet-500 hover:text-violet-400 transition-all px-6 font-medium">
+              <Link href="/demo">Book a Demo</Link>
+            </Button>
             <Button asChild className="rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-all px-6 font-medium">
               <Link href="/get-started">Get Started Free</Link>
             </Button>
@@ -89,7 +90,9 @@ export default function Navbar() {
               </Link>
             ))}
             <div className="pt-4 space-y-4">
-              <DemoForm />
+              <Button asChild variant="outline" className="w-full rounded-full bg-transparent border-gray-600 text-gray-300 border hover:bg-violet-600/20 hover:border-violet-500 hover:text-violet-400 transition-all px-6 font-medium">
+                <Link href="/demo">Book a Demo</Link>
+              </Button>
               <Button asChild className="w-full rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-all px-6 font-medium">
                 <Link href="/get-started">Get Started Free</Link>
               </Button>

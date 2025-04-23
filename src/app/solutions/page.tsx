@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Rocket, Building, GraduationCap, HeadphonesIcon } from "lucide-react"
-import { DemoForm } from "@/components/demo-form"
 import Link from "next/link"
 
 export default function SolutionsPage() {
@@ -218,9 +217,11 @@ export default function SolutionsPage() {
             <p className="text-xl text-gray-300 max-w-[800px] mb-8">
               Join leading companies using KekeliAI to build custom AI solutions.
             </p>
-            <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center mt-4">
-              <DemoForm />
-              <Button asChild className="rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-all px-8 font-medium">
+            <div className="flex flex-col sm:flex-row gap-4 mt-8">
+              <Button asChild variant="outline" className="rounded-full bg-transparent border-gray-600 text-gray-300 border hover:bg-violet-600/20 hover:border-violet-500 hover:text-violet-400 transition-all px-6 font-medium">
+                <Link href="/demo">Book a Demo</Link>
+              </Button>
+              <Button asChild className="rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-all px-6 font-medium">
                 <Link href="/get-started">Get Started Free</Link>
               </Button>
             </div>
