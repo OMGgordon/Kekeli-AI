@@ -9,15 +9,15 @@ export default function ProductPage() {
     <div className="flex flex-col items-center">
       {/* Hero Section */}
       <section className="w-full bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
-        <div className="container px-4 md:px-6 mx-auto flex flex-col items-center py-12 md:py-24 lg:py-32">
-          <div className="text-center space-y-4 max-w-[800px]">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
+        <div className="container px-4 md:px-6 mx-auto flex flex-col items-center justify-center min-h-[80vh]">
+          <div className="text-center space-y-6 max-w-[800px]">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
               Build AI models that understand your business
             </h1>
             <p className="text-lg md:text-xl text-gray-300">
               Train custom AI models on your business data to automate tasks, improve decision making, and drive efficiency.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 mt-8">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild variant="outline" className="rounded-full bg-transparent border-gray-600 text-gray-300 border hover:bg-violet-600/20 hover:border-violet-500 hover:text-violet-400 transition-all px-6 font-medium">
                 <Link href="/demo">Book a Demo</Link>
               </Button>
