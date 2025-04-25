@@ -53,7 +53,7 @@ export default function DemoPage() {
   return (
     <main className="flex-1">
       <section className="w-full bg-gradient-to-br from-gray-900 via-black to-gray-900">
-        <div className="container px-4 md:px-6 mx-auto flex flex-col items-center justify-center min-h-[80vh]">
+        <div className="container px-4 md:px-6 mx-auto flex flex-col items-center justify-center min-h-[80vh] pt-24">
           <div className="text-center space-y-6 max-w-[800px]">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
               See outcomes in days, not months
